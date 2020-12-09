@@ -43,17 +43,178 @@
     font-display: swap;
 }
 
-
 body {
     font-family: "Futura PT", sans-serif;
     background-color: #F9F9F9;
-    background-image: url(./images/bg.png);
+    background-image: url("./images/bg.png");
     -webkit-background-size: cover;
        -moz-background-size: cover;
             background-size: cover;
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #ffffff;
+    opacity: 0.9;
+    width: 100%;
+    height: 0;
+    transition: all 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.overlay.open {
+    position: fixed;
+    height: 100%;
+}
+
+.mini-menu{
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: -2000px;
+    margin: auto;
+    width: 850px;
+    height: 650px;
+    background-color: #FFBD54;
+    padding: 20px;
+    background-image: url('./images/qadamlar.png'), url('./images/kisspng-pet-sitting-dog-cat-puppy-chien-5b4a3b08951554\ 1.png');
+    background-position: center, left bottom;
+    background-repeat: no-repeat;
+    background-size: cover, 350px 324px;
+    transition: all 0.7s ease;
+}
+
+.mini-menu.opened{
+    top: 0;
+}
+
+.mini-menu-left{
+    width: 50%;
+}
+
+.mini-menu-right{
+    width: 50%;
+}
+
+.mini-menu-left h3{
+    font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 30px;
+color: #333333;
+margin-top: 140px;
+margin-left: 70px;
+}
+
+.mini-link{
+    display: flex;
+    margin-top: 20px;
+    width: 240px;
+    height: 50px;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    text-decoration: none;
+    color: #333333; 
+    position: relative;
+    margin-left: 70px;
+}
+
+.mini-link-first::before{
+    content: url('./images/google.png');
+    position: absolute;
+    left: 25px;
+}
+
+.mini-link-last::before{
+    content: url('./images/Vector-2.svg');
+    position: absolute;
+    left: 20px;
+}
+
+.mini-menu-right label{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 54px;
+    color: #333333;
+    margin-top: 120px;
+    display: inline-block;
+}
+
+.mini-menu-right input{
+    font-family: 'Futura PT', sans-serif;
+    width: 375px;
+    height: 50px;
+    margin-top: 15px;
+    padding-left: 20px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    font-size: 16px;
+    line-height: 21px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #949494;
+    background-color: #ffffff;
+    outline: none;
+    border: 2px solid transparent;
+}
+
+.mini-menu-right input:focus {
+    border: 2px solid #FFBD54;
+    background-color: #ffffff;
+}
+
+.mini-menu-right textarea {
+    font-family: 'Futura PT', sans-serif;
+    width: 375px;
+    height: 165px;
+    margin-top: 15px;
+    padding: 17px 20px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    resize: none;
+    font-size: 16px;
+    line-height: 21px;
+    color: #949494;
+    outline: none;
+    background-color: #ffffff;
+    border: 2px solid transparent;
+}
+
+.mini-menu-right textarea:focus {
+    border: 2px solid #FFBD54;
+    background-color: #ffffff;
+}
+
+.dark-btn{
+    margin-top: 20px;
+}
+
+.dark-btn:hover{
+    background-color: #ffffff!important;
+    color: #FFBD54!important;
 }
 
 .top-menu {
@@ -240,6 +401,11 @@ body {
     text-decoration: none;
     position: relative;
     padding-left: 30px;
+    transition: all 0.2s ease;
+}
+
+.link-main:hover{
+    color: #FFBD54;
 }
 
 .link-main::before {
@@ -251,7 +417,7 @@ body {
 
 .main-inner {
 
-    background-image: url(./images/Group\ 60.png), url(./images/Group\ 61.png);
+    background-image: url("./images/Group\ 60.png"), url("./images/Group\ 61.png");
     -webkit-background-size: auto 870px, auto 430px;
        -moz-background-size: auto 870px, auto 430px;
             background-size: auto 870px, auto 430px;
@@ -670,7 +836,6 @@ body {
     opacity: 0.6;
 }
 
-
 .reception::before {
     content: url(./images/document\ 1.svg);
     position: absolute;
@@ -822,7 +987,6 @@ body {
 .btn-dark:active {
     opacity: 0.6;
 }
-
 
 .block {
     width: 280px;
@@ -1101,6 +1265,7 @@ body {
     background-color: #000000;
     color: #FFBD54;
 }
+
 .btn-orange:active{
     background-color: #000000;
     color: #FFBD54;
@@ -1212,3 +1377,304 @@ footer .row-right p {
     text-align: right;
     color: #5C5C5C;
 }
+
+.contact-left{
+    padding: 100px;
+    width: 60%;
+}
+
+.contact-left h1{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 70px;
+    line-height: 64px;
+    color: #333333;
+}
+
+.contact-left p{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #949494;
+    margin-top: 27px;
+    margin-bottom: 150px;
+}
+
+.main-inner-two{
+    background: url("./images/kisspng-shar-pei-puppy-veterinarian-pet-stethoscope-veterinarian-5aec41564db012\ 12.png");
+    background-position: right bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.contact-left .row{
+    align-items: flex-start;
+}
+
+.flex-column{
+    width: 155px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mini-box img{
+    margin-bottom: 20px;
+}
+
+.mini-box a{
+    font-weight: 500;
+font-size: 16px;
+line-height: 21px;
+display: flex;
+align-items: center;
+color: #333333;
+text-decoration: none;
+transition: all 0.2s ease;
+}
+
+.mini-box a:hover{
+    color: #FFBD54;
+}
+
+.section-three{
+    margin-top: 80px;
+    background: url("./images/Group\ 22.svg");
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-top: 150px;
+}
+
+.section-three h2{
+    font-weight: bold;
+font-size: 48px;
+line-height: 62px;
+margin-top: 25px;
+display: flex;
+align-items: center;
+color: #333333;
+}
+
+.section-three .row-center div{
+    text-align: right;
+    margin: 0 auto;
+}
+
+.section-four{
+    margin-top: 60px;
+    position: relative;
+}
+
+.dog{
+    position: absolute;
+    top: -296px;
+    left: 20px;
+}
+
+.section-four-left{
+    width: 60%;
+}
+
+.section-four-right{
+    width: 40%;
+
+}
+
+.section-four-right img{
+    width: 100%;
+}
+
+.main-inner-three{
+    background-image: url("./images/kisspng-birdcage-budgerigar-cockatiel-parakeet-parrot-5a7c728f7bae43\ 1.png");
+    background-position: right top;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.services-left{
+    width: 38%;
+}
+
+.row-wrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 23%;
+    height: 350px;
+    background: #FFFFFF;
+    border-radius: 5px 5px 0px 0px;
+    padding: 30px;
+    box-sizing: border-box;
+    background-image: url("./images/pet-two.svg");
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: 110px 100px;
+    margin-bottom: 35px;
+}
+
+.card:hover{
+    box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+}
+
+.card:active{
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.main-text{
+    font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 34px;
+color: #333333;
+text-decoration: none;
+display: inline-block;
+}
+ 
+.card p{
+    font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 20px;
+color: #949494;
+margin: 14px 0 26px 0;
+}
+
+.card__link--orn{
+    padding:15px 30px ;
+background: #FFBD54;
+border-radius: 3px;
+font-style: normal;
+font-weight: 450;
+font-size: 16px;
+line-height: 21px;
+text-align: center;
+color: #FFFFFF;
+text-decoration: none;
+transition: all 0.5s ease;
+}
+
+.card__link--blue{
+    padding:15px 30px ;
+background: #78C0DE;
+border-radius: 3px;
+font-style: normal;
+font-weight: 450;
+font-size: 16px;
+line-height: 21px;
+text-align: center;
+color: #FFFFFF;
+text-decoration: none;
+transition: all 0.3s ease;
+}
+
+.card__link--blue:hover , .card__link--orn:hover{
+    background-color: black;
+}
+
+.main-inner-four{
+    background-color: #e5e5e5;
+    background: url("./images/kisspng-shar-pei-puppy-cat-kitten-veterinarian-veterinary-5acc8848a895d8\ 1.png");
+    background-position: 95% top;
+    background-size: contain;
+    background-repeat: no-repeat;  
+}
+
+.about-left{
+    background: url("./images/Group\ 22.svg"), url("./images/Object-3.png");
+    background-position: left bottom, 80% bottom;
+    background-size: contain , 112px 122px;
+    background-repeat: no-repeat; 
+}
+
+.section-five{
+    width: 100%;
+}
+
+.row-section{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-five-left img{
+    width: 100%;
+}
+
+.section-five-left{
+    width: 55%;
+}
+
+.section-five-right{
+    width: 40%;
+    padding-left:200px;
+    padding-right: 100px;
+}
+
+.section-five-right h2{
+    margin-top: 15%;
+    font-style: normal;
+font-weight: bold;
+font-size: 46px;
+line-height: 48px;
+color: #333333;
+}
+
+.section-five-right p{
+    font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 26px;
+color: #949494;
+margin: 20px 0;
+}
+
+.section-five-right span{
+    color: #FFBD54;
+}
+
+.section-five-right small{
+    color: #3D9CEA;
+    font-weight: normal;
+font-size: 20px;
+line-height: 26px;
+}
+
+.flex-row{
+    flex-direction: row-reverse;
+}
+
+.foot{
+    width: 40%;
+    margin-top: 13%;
+}
+
+.foot img{
+    width: 10px;
+    height: 17px;
+}
+
+.foot-img{
+    transform: rotate(180deg);
+}
+
+.foot sup{
+    font-style: normal;
+font-weight: 500;
+font-size: 20px;
+color: #333333;
+}
+
+.foot sub{
+    font-style: normal;
+font-weight: 500;
+font-size: 14px;
+color: #949494;
+}
+

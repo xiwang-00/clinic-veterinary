@@ -11,6 +11,30 @@
 </head>
 
 <body>
+    <div class="overlay" id="overlay"></div>
+    <div class="mini-menu" id="mini-menu">
+        <div class="row">
+            <a href="#" id="close"><img src="./images/Vector-3.svg" alt=""></a>
+        </div>
+        <div class="row ">
+            <div class="mini-menu-left">
+                <h3>Авторизация:</h3>
+                <a class="mini-link mini-link-first" href="#">Войти через Google</a>
+                <a class="mini-link mini-link-last" href="#">Войти через Facebook</a>
+
+            </div>
+            <div class="mini-menu-right">
+                <form action="https://echo.htmlacademy.ru">
+                    <label for="text">
+                        Задать вопрос
+                    </label>
+                    <input type="text" name="username" placeholder="Ваше имя">
+                        <textarea id="text" name="review"  cols="30" rows="10" placeholder="Опишите Ваш вопрос."></textarea>
+                        <button type="submit" class="btn-dark dark-btn">Задать нам вопрос</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <header>
         <div class="header-inner">
             <div class="top-menu">
@@ -28,17 +52,22 @@
                 </div>
             </div>
             <div class="bottom-menu">
-                <a class="logo" href="#"></a>
+                <div class="logo">
+                    <div class="logo-box">
+                        <a href="#"></a>
+                    </div>
+                    <a class="logo" href="#"></a>
+                </div>
                 <div class="links">
-                    <a class="menu-link menu-link-one" href="#">Главная</a>
-                    <a class="menu-link" href="#">О Клинике</a>
-                    <a class="menu-link" href="#">Наши Услуги</a>
+                    <a class="menu-link menu-link-one" href="./index.html">Главная</a>
+                    <a class="menu-link" href="./index-four.html">О Клинике</a>
+                    <a class="menu-link" href="./index-three.html">Наши Услуги</a>
                     <a class="menu-link" href="#">Полезные Статьи</a>
                     <a class="menu-link" href="#">FAQ</a>
-                    <a class="menu-link" href="#">Контакты</a>
+                    <a class="menu-link" href="./index-two.html">Контакты</a>
                 </div>
                 <div class="buttons">
-                    <a class="link-main" href="#">Задать вопрос</a>
+                    <a id="link-main" class="link-main" href="#">Задать вопрос</a>
                 </div>
             </div>
         </div>
@@ -244,6 +273,7 @@
             </div>
         </div>
     </footer>
+    <script src="./main.js"></script>
 </body>
 
 </html>
